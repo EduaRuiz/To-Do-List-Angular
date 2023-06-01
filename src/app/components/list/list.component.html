@@ -1,0 +1,23 @@
+<mat-card class="container">
+  <mat-card-content>
+    <div>
+      <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{title}}
+            </mat-panel-title>
+            <mat-panel-description>
+              {{ description }}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <ul>
+            <li *ngFor="let item of list">
+              <mat-checkbox [color]="'primary'">{{item}}</mat-checkbox>
+            </li>
+          </ul>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </mat-card-content>
+</mat-card>
