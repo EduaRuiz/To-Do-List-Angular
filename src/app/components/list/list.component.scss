@@ -1,9 +1,50 @@
 .container {
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 80%;
 }
 
-ul {
-  list-style-type: none;
-  margin-top: 4px;
+.demo-table {
+  width: 100%;
+}
+
+.mat-grid-tile-check {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-grit-tile-delete {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-grid-tile-add {
+  text-align: left;
+  display: flex;
+  align-items: right;
+  justify-content: right;
+}
+
+.mat-grid-tile-value {
+  align-items: center;
+}
+
+.item{
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+mat-form-field {
+  input:disabled {
+    text-decoration: line-through;
+  }
+}
+
+.badge-container {
+  margin-left: auto;
+  margin-right: 30px;
 }

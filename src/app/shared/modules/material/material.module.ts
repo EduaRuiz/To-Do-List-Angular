@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
-
-import { MatLegacyMenuModule as MatMenuModule } from '@angular/material/legacy-menu';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatLegacySelectModule as MatSelectModule } from '@angular/material/legacy-select';
-import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
-import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
-import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
-import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { MatLegacyCheckboxModule as MatCheckboxModule } from '@angular/material/legacy-checkbox';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 const component = [
   MatCardModule,
@@ -22,21 +26,16 @@ const component = [
   MatInputModule,
   MatExpansionModule,
   MatCheckboxModule,
+  MatListModule,
+  MatTableModule,
+  MatGridListModule,
+  MatBadgeModule,
+  MatProgressBarModule,
 ];
 
 @NgModule({
   declarations: [],
-  imports: [
-    MatCardModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatInputModule,
-    MatCheckboxModule,
-  ],
+  imports: [component],
   exports: [component],
 })
 export class MaterialModule {}
