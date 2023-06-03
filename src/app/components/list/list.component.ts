@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
@@ -15,11 +15,7 @@ import { Item } from '../interfaces';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
-  @Input() itemList: Item[] = [
-    { value: 'Item 1', isChecked: false, updatedAt: new Date(), show: true },
-    { value: 'Item 2', isChecked: true, updatedAt: new Date(), show: true },
-    { value: 'Item 3', isChecked: false, updatedAt: new Date(), show: true },
-  ];
+  itemList: Item[] = [];
   formGroup!: FormGroup;
   private itemListSubject = new BehaviorSubject<Item[]>([...this.itemList]);
   progress = 0;
@@ -72,7 +68,6 @@ export class ListComponent implements OnInit {
   }
 
   toggleTheme() {
-    this.darkTheme = !this.darkTheme;
     localStorage.setItem('darkTheme', JSON.stringify(this.darkTheme));
   }
 
@@ -115,7 +110,6 @@ export class ListComponent implements OnInit {
     const formGroup = this.itemsArray?.at(index);
     const isChecked = formGroup?.get('isChecked')?.value;
     const control = formGroup?.get('value');
-    control?.setValue(control?.value?.trim());
     if (isChecked) {
       control?.disable();
     } else {

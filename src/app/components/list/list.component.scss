@@ -1,9 +1,6 @@
 .container {
   margin: 0 auto;
-  overflow: auto;
-  width: 1000px;
-  margin-left: 10%;
-  margin-right: 10%;
+  width: 80%;
 }
 
 .wrapper {
@@ -13,10 +10,7 @@
 
 .to-do {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5%;
+  margin: 5%;
 }
 
 .mat-grid-tile-check {

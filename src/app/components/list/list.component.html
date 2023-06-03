@@ -1,15 +1,15 @@
-<div class="wrapper">
-<div [ngClass]="{'dark-theme': darkTheme}" class="to-do">
+<div class="wrapper" [ngClass]="{'dark-theme': darkTheme}">
+<div  class="to-do">
   <div class="container">
     <mat-card>
       <mat-card-header>
         <mat-card-subtitle>
-          <div matBadge="{{badge}}" matBadgeOverlap="false" class="badge-container"></div>
+          <div matBadge="{{badge}}" matBadgeOverlap="false" matBadgeColor="warn" class="badge-container"></div>
         </mat-card-subtitle>
         <mat-card-subtitle>
           Pending
         </mat-card-subtitle>
-        <mat-slide-toggle (click)="toggleTheme()" class="toggle-theme">Cambiar Tema</mat-slide-toggle>
+        <mat-slide-toggle (click)="toggleTheme()" class="toggle-theme" [(ngModel)]="darkTheme">Change theme</mat-slide-toggle>
       </mat-card-header>
       <mat-card-header class="card-title">
         <mat-card-title class="card-title">
@@ -23,21 +23,21 @@
             <mat-grid-tile [colspan]="12" [rowspan]="1" class="mat-grid-tile-add">
               <mat-form-field appearance="outline" class="input-add">
                 <mat-label>New Item</mat-label>
-                <mat-icon matPrefix>check</mat-icon>
+                <mat-icon matPrefix color="warn">check</mat-icon>
                 <input type="text" matInput formControlName="newItem" placeholder="New Item"
                   (keydown.enter)="addItem()">
                 <button mat-icon-button (click)="addItem()" [disabled]="alreadyExist()" matSuffix>
-                  <mat-icon>add</mat-icon>
+                  <mat-icon color="warn">add</mat-icon>
                 </button>
               </mat-form-field>
             </mat-grid-tile>
           </mat-grid-list>
-          <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
+          <mat-progress-bar mode="determinate" [value]="progress" color="warn"></mat-progress-bar>
           <br>
           <mat-button-toggle-group formControlName="filter" (change)="filterList()">
+            <mat-button-toggle value="all">All</mat-button-toggle>
             <mat-button-toggle value="completed">Done</mat-button-toggle>
             <mat-button-toggle value="pending">Pending</mat-button-toggle>
-            <mat-button-toggle value="all">All</mat-button-toggle>
           </mat-button-toggle-group>
           <br>
           <br>
@@ -53,7 +53,7 @@
               </mat-grid-tile>
               <mat-grid-tile [colspan]="1" [rowspan]="1" class="mat-grit-tile-delete">
                 <button mat-icon-button (click)="deleteItem(i)" [disabled]="item.get('isChecked')?.value">
-                  <mat-icon fontIcon="close"></mat-icon>
+                  <mat-icon fontIcon="close" color="warn"></mat-icon>
                 </button>
               </mat-grid-tile>
             </mat-grid-list>

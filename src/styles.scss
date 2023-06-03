@@ -26,7 +26,7 @@ $dark-theme: mat.define-dark-theme(
     color: (
       primary: mat.define-palette(mat.$blue-grey-palette, 500),
       accent: mat.define-palette(mat.$orange-palette),
-      warn: mat.define-palette(mat.$red-palette),
+      warn: mat.define-palette(mat.$orange-palette),
       foreground: mat.define-palette(mat.$grey-palette, 500),
 
     ),
@@ -49,3 +49,16 @@ body {
   background-image: linear-gradient(to bottom right, #fb456b, #405efc);
 }
 
+body .dark-theme {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-image: linear-gradient(to bottom right, #424242,orange, #424242);
+}
+
+// .mat-icon:disabled {
+//   opacity: 0.5;
+// }
+
+button:disabled {
+  opacity: 0.5;
+}
