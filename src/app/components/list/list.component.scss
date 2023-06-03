@@ -1,10 +1,22 @@
 .container {
   margin: 0 auto;
-  max-width: 80%;
+  overflow: auto;
+  width: 1000px;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
-.demo-table {
-  width: 100%;
+.wrapper {
+  height: 100vh;
+  overflow: auto;
+}
+
+.to-do {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
 }
 
 .mat-grid-tile-check {
@@ -32,7 +44,7 @@
   align-items: center;
 }
 
-.item{
+.item {
   border: none;
   box-shadow: none;
   background-color: transparent;
@@ -45,6 +57,43 @@ mat-form-field {
 }
 
 .badge-container {
+  margin-right: 0px;
+
+}
+
+.toggle-theme {
   margin-left: auto;
-  margin-right: 30px;
+}
+
+.input-item {
+  width: 100%;
+  top: 0;
+  position: absolute;
+}
+
+.input-add {
+  width: 100%;
+}
+
+.card-title{
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.icon-display {
+  transform: scale(1.5);
+  margin-left:  10px;
+  margin-right:  10px;
+  color: #ff0000;
+}
+
+.dark-theme .icon-display {
+  color: orange;
+}
+
+.dark-theme .type-writer {
+  color: #fff;
 }

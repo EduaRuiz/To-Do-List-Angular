@@ -14,6 +14,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 const component = [
   MatCardModule,
@@ -31,6 +34,9 @@ const component = [
   MatGridListModule,
   MatBadgeModule,
   MatProgressBarModule,
+  MatTabsModule,
+  MatButtonToggleModule,
+  MatSlideToggleModule,
 ];
 
 @NgModule({
