@@ -25,18 +25,18 @@ export class ListComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
+    this.itemListSubject.subscribe((itemList) => {
+      const checked = itemList.filter((item) => item.isChecked).length;
+      this.progress = (checked / itemList.length) * 100;
+      this.badge = itemList.length - checked;
+    });
+
     this.itemList = JSON.parse(localStorage.getItem('itemList') ?? '[]');
     this.darkTheme = JSON.parse(localStorage.getItem('darkTheme') ?? 'false');
     this.formGroup = this.formBuilder.group({
       itemsArray: this.formBuilder.array([]),
       newItem: ['', [Validators.required, Validators.minLength(1)]],
       filter: ['all', [Validators.required]],
-    });
-
-    this.itemListSubject.subscribe((itemList) => {
-      const checked = itemList.filter((item) => item.isChecked).length;
-      this.progress = (checked / itemList.length) * 100;
-      this.badge = itemList.length - checked;
     });
 
     this.itemList.forEach((item) => {
@@ -53,6 +53,7 @@ export class ListComponent implements OnInit {
       });
       this.itemsArray.push(list);
     });
+    this.itemListSubject.next([...this.itemList]);
   }
 
   get itemsArray(): FormArray {
